@@ -2,36 +2,42 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
-
+var myArr = ['Hélio', 12, 3.14, false, 'Metal']
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+
+var myFunction = function(arr){
+    return arr;
+};
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
-
+myFunction(myArr)['1'];
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
 segundo, um número. A função deve retornar o valor de um índice do array que foi passado
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+mySecondFunction = function(newArr, number){
+    return newArr[number];
+};
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
-
+var myNewArray = [true, 'string', 10, null, NaN]
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+mySecondFunction(myNewArray, 0) //true
+mySecondFunction(myNewArray, 1) //'string'
+mySecondFunction(myNewArray, 2) //10
+mySecondFunction(myNewArray, 3) //null
+mySecondFunction(myNewArray, 4) //NaN
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +53,53 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+var book = function(bookName){
+    var allBooks ={
+        'JavaScript: O Guia Definitivo': {
+            quantidadePaginas: 1080,
+            autor: 'David Flanagan',
+            editora: 'Bookman'
+        },
+        'Cangaceiro JavaScript: Uma aventura no sertão da programação': {
+            quantidadePaginas: 776,
+            autor: 'Flávio Almeida',
+            editora: 'Casa do Código'
+        },
+        'Eloquent Javascript, 3rd Edition: A Modern Introduction to Programming':{
+            quantidadePaginas: 776,
+            autor: 'Marijn Haverbeke',
+            editora: 'No Starch Press'
+        }
+    };
+
+    return !bookName ? allBooks : allBooks[bookName];
+
+};
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
-
+console.log(book());
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
-
+var bookName = 'Eloquent Javascript, 3rd Edition: A Modern Introduction to Programming';
+console.log(`O livro ${bookName} tem ${book(bookName).quantidadePaginas} páginas`);
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+var bookName = 'Eloquent Javascript, 3rd Edition: A Modern Introduction to Programming';
+console.log(`O autor do livro ${bookName} é ${book(bookName).autor}`);
+
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+var bookName = 'Eloquent Javascript, 3rd Edition: A Modern Introduction to Programming';
+console.log(`O livro ${bookName} é publicado pela editora ${book(bookName).editora}`);
